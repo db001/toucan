@@ -45,9 +45,11 @@ class App extends Component {
     const data = this.state;
 
     return (
-      <Post 
-        data={data}
-      />
+      <div className="container">
+        <Post 
+          data={data}
+        />
+      </div>      
     );
   }
 }

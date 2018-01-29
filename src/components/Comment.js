@@ -6,7 +6,7 @@ class Comment extends Component {
     const comment = this.props.comment;
 
     return (
-      <div>
+      <div className="comment">
         {comment}
       </div>
     )

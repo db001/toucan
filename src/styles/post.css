@@ -1,3 +1,25 @@
 .post {
   margin-bottom: 10px;
+  display: flex;
+}
+.date {
+  display: flex;
+  flex-direction: column;
+  background-color: green;
+  width: 75px;
+  height: 75px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+.date-day {
+  font-size: 26px;
+}
+.date-month {
+  text-transform: uppercase;
+}
+.post-headline {
+  background-color: aquamarine;
+  width: 250px;
+  height: 75px;
 }

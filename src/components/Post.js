@@ -15,7 +15,7 @@ class Post extends Component {
       ];
 
       const convertedDate = new Date(dateString);
-      const day = convertedDate.getDate();
+      const day = `0${convertedDate.getDate()}`.slice(-2);
       const month = monthNames[convertedDate.getMonth()];
       return {
         day,
@@ -29,23 +29,25 @@ class Post extends Component {
         return (
           <div
             key={`post-${post.date}`}
-            className='post'
+            className="post"
           >
-            <div>
-              <span>
+            <div className="date">
+              <div className="date-day">
                 {convertDate(post.date).day}. 
-              </span>
-              <span>
+              </div>
+              <div className="date-month">
                 {convertDate(post.date).month}              
-              </span>
-            </div>              
-            <h3>
-              {post.headline}
-            </h3>
-            <p>
-              {post.text_content}
-            </p>
-            {post.comments.length > 0 ?
+              </div>
+            </div>
+            <div className="post-content">             
+              <h3 className="post-headline">
+                {post.headline}
+              </h3>
+              {/* <p className="post-text">
+                {post.text_content}
+              </p> */}
+            </div>
+            {/* {post.comments.length > 0 ?
               post.comments.map((comment, index) => {
                 return (
                   <Comment
@@ -54,7 +56,7 @@ class Post extends Component {
                   />
                 ) 
               }) : null
-          }
+          } */}
           </div>          
         )
       })} 
