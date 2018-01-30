@@ -45,7 +45,7 @@ class App extends Component {
     const data = this.state;
 
     return (
-      <div className="container">
+      <div>
         <Post 
           data={data}
         />

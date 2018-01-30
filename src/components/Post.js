@@ -24,7 +24,7 @@ class Post extends Component {
     };
 
     return (
-      <div>
+      <div className= "container">
       { data.posts.map(post => {
         return (
           <div
@@ -39,6 +39,7 @@ class Post extends Component {
                 {convertDate(post.date).month}              
               </div>
             </div>
+            
             <div className="post-content">             
               <h3 className="post-headline">
                 {post.headline}
@@ -47,16 +48,19 @@ class Post extends Component {
                 {post.text_content}
               </p> */}
             </div>
-            {/* {post.comments.length > 0 ?
-              post.comments.map((comment, index) => {
-                return (
-                  <Comment
-                    key={index}
-                    comment={comment}
-                  />
-                ) 
-              }) : null
-          } */}
+
+            <div className="comment-container">
+              {/* {post.comments.length > 0 ?
+                post.comments.map((comment, index) => {
+                  return (
+                    <Comment
+                      key={index}
+                      comment={comment}
+                    />
+                  ) 
+                }) : null
+              } */}
+            </div>
           </div>          
         )
       })} 
