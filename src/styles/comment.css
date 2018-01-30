@@ -1,0 +1,13 @@
+.comment {
+  background-color:#d0fcb3;
+  padding: 10px 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  text-align: right;
+  width: auto;
+  float: right;
+  clear: both;
+}
+.post:nth-child(even) > .comment-container > .comment {
+  background-color: #ffaaaa;
+}

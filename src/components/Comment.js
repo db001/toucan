@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../styles/comment.css';
+
 
 class Comment extends Component {
   render () {

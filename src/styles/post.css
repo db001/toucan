@@ -1,16 +1,33 @@
+.container {
+  width: 65%;
+  margin: 10px auto;
+}
 .post {
-  margin: auto;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  clear: both;
+}
+.post:nth-child(even) > .post-container > .date {
+  background-color: #961313;
+}
+.post:nth-child(even) > .post-container > .post-content {
+  background-color: #ffaaaa;
+}
+.post-container {
+  margin: 5px auto;
   display: flex;
-  align-items: center;
 }
 .date {
-  background-color: green;
-  width: 60px;
-  height: 60px;
+  background-color: #42912e;
+  width: 65px;
+  height: 65px;
   border-radius: 15px;
   text-align: center;
   color: white;  
+  display: flex;
+  margin-right: 10px;
+}
+.date > div {
+  margin: auto;
 }
 .date-day {
   font-size: 26px;
@@ -19,13 +36,35 @@
   text-transform: uppercase;
 }
 .post-content {
-  width: 100%;
-  background-color: aquamarine;
+  width: 90%;
+  background-color:#d0fcb3;
   padding: 0 10px;
-  margin-left: 10px;
-  border-radius: 15px;   
+  border-radius: 15px;
+  display: flex;
 }
-.post-headline {
-  height: 60px;  
-  margin: 0;
+.post-body {
+  width: 100%;
+}
+.post-body > h3 {
+  width: 100%;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-top: 5px;
+}
+.button-container > div {
+  background-color: #fff;
+  border: 1px solid #777;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px;
+  margin: 2px 0;
+  cursor: pointer;
+}
+.comment-container {
+  display: inline-block;
+  float: right;
+  margin-bottom: 5px;
 }

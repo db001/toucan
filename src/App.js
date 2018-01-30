@@ -10,7 +10,7 @@ const sampleData = {
       text_content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       comments: [
         'Comment comment comment 1',
-        'Comment comment comment 2',
+        'Really long but pointless comment to take up space',
         'Agreed'        
       ]
     },
@@ -28,7 +28,15 @@ const sampleData = {
       headline: 'No Comment',
       text_content: 'Dull dull dull...',
       comments: []
-    }
+    },
+    {
+      date: '2016-05-04T12:01:59.001Z',
+      headline: 'Post Headline Number 4',
+      text_content: 'I\'m only here to check that the alternating colour CSS rules are working...',
+      comments: [
+        'Doing a great job bro!',       
+      ]
+    },
   ]
 };
 
