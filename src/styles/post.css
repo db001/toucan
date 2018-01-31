@@ -5,14 +5,20 @@
 header {
   display: flex;
   justify-content: space-between;
-  align-content: baseline;
-  margin: 0;
+  height: 60px;
+  margin-left: 72px;
 }
 .newPost {
-  align-self: center;
+  align-self: flex-end;
   border: 1px solid #777;
   padding: 3px;
   border-radius: 3px;
+  margin-bottom: 3px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.newPost > i {
+  margin-right: 6px;
 }
 .post {
   margin-bottom: 10px;
@@ -30,13 +36,13 @@ header {
 }
 .date {
   background-color: #42912e;
-  width: 65px;
+  width: 75px;
   height: 65px;
   border-radius: 15px;
   text-align: center;
   color: white;  
   display: flex;
-  margin-right: 10px;
+  margin-right: 7px;
 }
 .date > div {
   margin: auto;
@@ -48,7 +54,7 @@ header {
   text-transform: uppercase;
 }
 .post-content {
-  width: 90%;
+  width: 100%;
   background-color:#d0fcb3;
   padding: 0 10px;
   border-radius: 15px;

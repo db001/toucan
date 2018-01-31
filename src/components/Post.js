@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
 import '../styles/post.css';
+import NewPostModal from './NewPostModal';
 
 // Convert timestamp to day and month
 const convertDate = dateString => {
@@ -18,15 +19,27 @@ const convertDate = dateString => {
 };
 
 class Post extends Component {
+
   render () {
 
-    const data = this.props.data;  
+    const {
+      data,
+      deletePost,
+      createPost
+    } = this.props;  
 
     return (
       <div className="container">
+        <NewPostModal />        
         <header>
           <h1>Posts</h1>
-          <div className="newPost">New Post</div>
+          <div
+            className="newPost"
+            onClick={() => createPost()}
+          >
+            <i className="fa fa-envelope-o" aria-hidden="true">
+            </i>new post
+          </div>
         </header>
         { data.posts.map(post => {
           return (
@@ -54,11 +67,11 @@ class Post extends Component {
                       </p>                
                   </div>
                   <div className="button-container">
-                      <div>
-                        <i class="fa fa-times" aria-hidden="true"></i>
+                      <div onClick={() => deletePost(post.date)}>
+                        <i className="fa fa-times" aria-hidden="true"></i>
                       </div>
                       <div>  
-                        <i class="fa fa-commenting" aria-hidden="true"></i>
+                        <i className="fa fa-commenting" aria-hidden="true"></i>
                       </div>
                     </div>
                 </div>

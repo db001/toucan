@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Post from './components/Post';
+import NewPostModal from './components/NewPostModal';
 
 /* Sample data */
 const sampleData = {
@@ -32,7 +33,7 @@ const sampleData = {
     {
       date: '2016-05-04T12:01:59.001Z',
       headline: 'Post Headline Number 4',
-      text_content: 'I\'m only here to check that the alternating colour CSS rules are working...',
+      text_content: 'I\'m only here to check that the alternating colour scheme is working...',
       comments: [
         'Doing a great job bro!',       
       ]
@@ -45,17 +46,56 @@ class App extends Component {
   constructor(props) {
     super();
 
-    this.state = sampleData;
+    this.state = {
+      sampleData,
+      newPostModalOpen: false
+    }
+  }
+
+  toggleNewPostModal = () => {
+    this.setState({
+      newPostModalOpen: !this.state.newPostModalOpen
+    })
+  }
+
+  deletePost = id => {
+    const posts = this.state.sampleData.posts;
+    const matchId = item => item.date !== id;
+    const updatedPosts = posts.filter(matchId);
+    this.setState({
+      sampleData: {
+        posts: updatedPosts
+      }
+    })
+  }
+
+  createPost = () => {
+    const posts = this.state.sampleData.posts.slice();
+    const timestamp = new Date();
+    const newPost = {
+      date: timestamp,
+      headline: '',
+      text_content: '',
+      comments: []
+    };
+    const updatedPosts = posts.push(newPost);
+    this.setState({
+      sampleData: {
+        posts: updatedPosts
+      }
+    })
   }
 
   render() {
 
-    const data = this.state;
+    const data = this.state.sampleData;
 
     return (      
       <div>
         <Post 
           data={data}
+          deletePost={this.deletePost}
+          createPost={this.createPost}
         />
       </div>      
     );
