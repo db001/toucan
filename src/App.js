@@ -52,7 +52,7 @@ class App extends Component {
 
     const data = this.state;
 
-    return (
+    return (      
       <div>
         <Post 
           data={data}

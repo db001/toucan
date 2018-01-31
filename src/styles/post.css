@@ -1,15 +1,27 @@
 .container {
   width: 65%;
-  margin: 10px auto;
+  margin: 10px auto 0 auto;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: baseline;
+  margin: 0;
+}
+.newPost {
+  align-self: center;
+  border: 1px solid #777;
+  padding: 3px;
+  border-radius: 3px;
 }
 .post {
-  margin-top: 10px;
+  margin-bottom: 10px;
   clear: both;
 }
-.post:nth-child(even) > .post-container > .date {
+.post:nth-child(odd) > .post-container > .date {
   background-color: #961313;
 }
-.post:nth-child(even) > .post-container > .post-content {
+.post:nth-child(odd) > .post-container > .post-content {
   background-color: #ffaaaa;
 }
 .post-container {
