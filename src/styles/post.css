@@ -2,12 +2,6 @@
   width: 65%;
   margin: 10px auto 0 auto;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  height: 60px;
-  margin-left: 72px;
-}
 .newPost {
   align-self: flex-end;
   border: 1px solid #777;
@@ -24,10 +18,10 @@ header {
   margin-bottom: 10px;
   clear: both;
 }
-.post:nth-child(even) > .post-container > .date {
+.post:nth-child(odd) > .post-container > .date {
   background-color: #961313;
 }
-.post:nth-child(even) > .post-container > .post-content {
+.post:nth-child(odd) > .post-container > .post-content {
   background-color: #ffaaaa;
 }
 .post-container {

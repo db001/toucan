@@ -24,21 +24,10 @@ class Post extends Component {
     const {
       data,
       deletePost,
-      addNewPost
-    } = this.props;  
+    } = this.props;
 
     return (
-      <div className="container">     
-        <header>
-          <h1>Posts</h1>
-          <div
-            className="newPost"
-            onClick={() => addNewPost()}
-          >
-            <i className="fa fa-envelope-o" aria-hidden="true">
-            </i>new post
-          </div>
-        </header>
+      <div className="container">           
         { Object.keys(data).map(post => {
           return (
             <div

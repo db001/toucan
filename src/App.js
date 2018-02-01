@@ -55,6 +55,7 @@ class App extends Component {
 
     this.state = {
       sampleData,
+      newPostModelOpen: false
     }
   }
 
@@ -62,6 +63,13 @@ class App extends Component {
     this.setState({
       newPostModalOpen: !this.state.newPostModalOpen
     })
+  }
+
+  openNewPostModal = () => {
+    this.setState({
+      newPostModalOpen: true
+    })
+    console.log(this.state.newPostModelOpen);
   }
 
   deletePost = id => {
@@ -89,17 +97,29 @@ class App extends Component {
 
   render() {
 
-    const data = this.state.sampleData;
-
     return (      
       <div>
+        <header>
+            <h1>Posts</h1>
+            <div
+              className="newPost"
+              onClick={this.openNewPostModal}
+            >
+              <i className="fa fa-envelope-o" aria-hidden="true">
+              </i>new post
+            </div>
+          </header>
         <NewPostModal 
           addNewPost={this.addNewPost}
+          show={this.state.newPostModelOpen}
+          onClose={this.toggleNewPostModal}
         />  
         <Post 
-          data={data}
+          data={this.state.sampleData}
+          newPostModalState={this.state.newPostModelOpen}
           deletePost={this.deletePost}
           addNewPost={this.addNewPost}
+          openNewPostModal={this.openNewPostModal}
         />
          
       </div>      

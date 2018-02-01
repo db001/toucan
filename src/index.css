@@ -3,4 +3,12 @@ body {
   padding: 0;
   font-family: 'Ubuntu', sans-serif;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  margin-left: 72px;
+  width: 65%;
+  margin: auto;
+}
 
