@@ -8,6 +8,6 @@
   float: right;
   clear: both;
 }
-.post:nth-child(odd) > .comment-container > .comment {
+.post:nth-child(even) > .comment-container > .comment {
   background-color: #ffaaaa;
 }
