@@ -55,7 +55,6 @@ class App extends Component {
 
     this.state = {
       sampleData,
-      newPostModalOpen: false
     }
   }
 
@@ -78,20 +77,13 @@ class App extends Component {
     }    
   }
 
-  createPost = () => {
-    const posts = this.state.sampleData.posts.slice();
-    const timestamp = new Date();
-    const newPost = {
-      date: timestamp,
-      headline: '',
-      text_content: '',
-      comments: []
-    };
-    const updatedPosts = posts.push(newPost);
+  addNewPost = (post) => {
+    const posts = this.state.sampleData;
+    const timestamp = Date.now();
+    posts[`post${timestamp}`] = post;
     this.setState({
-      sampleData: {
-        posts: updatedPosts
-      }
+      ...sampleData,
+      post
     })
   }
 
@@ -101,11 +93,15 @@ class App extends Component {
 
     return (      
       <div>
+        <NewPostModal 
+          addNewPost={this.addNewPost}
+        />  
         <Post 
           data={data}
           deletePost={this.deletePost}
-          createPost={this.createPost}
+          addNewPost={this.addNewPost}
         />
+         
       </div>      
     );
   }

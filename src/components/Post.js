@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
 import '../styles/post.css';
-import NewPostModal from './NewPostModal';
 
 // Convert timestamp to day and month
 const convertDate = dateString => {
@@ -25,17 +24,16 @@ class Post extends Component {
     const {
       data,
       deletePost,
-      createPost
+      addNewPost
     } = this.props;  
 
     return (
-      <div className="container">
-        <NewPostModal />        
+      <div className="container">     
         <header>
           <h1>Posts</h1>
           <div
             className="newPost"
-            onClick={() => createPost()}
+            onClick={() => addNewPost()}
           >
             <i className="fa fa-envelope-o" aria-hidden="true">
             </i>new post
@@ -88,6 +86,7 @@ class Post extends Component {
                   })
                 }
               </div>
+
             </div>
           )
         })} 
