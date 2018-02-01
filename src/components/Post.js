@@ -67,7 +67,7 @@ class Post extends Component {
                       </p>                
                   </div>
                   <div className="button-container">
-                      <div onClick={() => deletePost(data[post].date)}>
+                      <div onClick={() => deletePost(post)}>
                         <i className="fa fa-times" aria-hidden="true"></i>
                       </div>
                       <div>  

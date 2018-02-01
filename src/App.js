@@ -39,6 +39,15 @@ const sampleData = {
   }
 };
 
+const checkForComments = post => {
+  if(post.comments.length > 0) {
+    return window.confirm("Are you sure you wish to delete this post and comments?");
+  }
+  else {
+    return true;
+  }
+}
+
 class App extends Component {
 
   constructor(props) {
@@ -56,16 +65,17 @@ class App extends Component {
     })
   }
 
-  // Needs refactoring due to change in data
   deletePost = id => {
     const posts = this.state.sampleData;
-    const matchId = item => item.date !== id;
-    const updatedPosts = posts.filter(matchId);
-    this.setState({
-      sampleData: {
-        posts: updatedPosts
-      }
-    })
+    // If there are comments and user has okayed the confirm, delete post
+    if(checkForComments(posts[id])) {
+      delete posts[id];
+      this.setState({ 
+        sampleData: posts })
+    // Else return out of function without updating state
+    } else {
+      return;
+    }    
   }
 
   createPost = () => {
