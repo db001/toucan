@@ -103,7 +103,7 @@ class App extends Component {
             <h1>Posts</h1>
             <div
               className="newPost"
-              onClick={this.openNewPostModal}
+              // onClick={this.openNewPostModal()}
             >
               <i className="fa fa-envelope-o" aria-hidden="true">
               </i>new post
@@ -116,7 +116,6 @@ class App extends Component {
         />  
         <Post 
           data={this.state.sampleData}
-          newPostModalState={this.state.newPostModelOpen}
           deletePost={this.deletePost}
           addNewPost={this.addNewPost}
           openNewPostModal={this.openNewPostModal}
